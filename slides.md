@@ -202,10 +202,4 @@ Benchmark:
 
 <!-- _class: lead -->
 
-## Ringraziamenti
-
----
-
-<!-- _class: lead -->
-
 # Grazie per l’attenzione
