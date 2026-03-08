@@ -1,6 +1,6 @@
 # thesis_pres
 
-Presentation for master thesis in computer science and engineering
+Presentation for master thesis in computer science and engineering at Università di Bologna
 
 ## Release
 
