@@ -5,6 +5,10 @@ paginate: true
 size: 16:9
 title: Valutazione delle Capacità di Ragionamento dei Large Language Model
 description: Discussione tesi magistrale
+style: |
+  .red {
+    color: red;
+  }
 ---
 
 <!-- _class: lead -->
@@ -19,21 +23,9 @@ description: Discussione tesi magistrale
 
 <!-- _class: lead -->
 
-#### Capacità LLM in un compito:
-
-- **sequenziale**
-- **parzialmente osservabile**
-- **verificabile automaticamente**
-
----
-
 ## Task
 
-- Il modello è posto in una cella del labirinto
-- Riceve solo una **descrizione locale testuale**
-- Deve scegliere una mossa tra:
-  **North / East / South / West**
-- Vince solo se raggiunge e **attraversa l’uscita**
+![width:900px](./assets/task_example.png)
 
 ---
 
@@ -48,27 +40,22 @@ description: Discussione tesi magistrale
 
 # Generazione dei labirinti
 
-- algoritmo DFS
+- algoritmo Depth-First Search
 - partenza e uscita scelti casualmente
 - filtraggio labirinti 'facili':
-
-$$
-	S(L) \;\ge\; \operatorname{round}\!\left(\alpha n^2\right),
-	\qquad \alpha = 0.5
-$$
 
 ---
 
 <!-- _class: lead -->
 
-![width:400px](./assets/selection_example.png)
+![width:900px](./assets/selection_example_flipped.png)
 
 ---
 
-# Generazione dei labirinti
+# Caratteristiche dei labirinti
 
 - sempre risolvibili
-- persenza di vicoli ciechi
+- presenza di vicoli ciechi
 - unico percorso ideale
 
 ---
@@ -77,7 +64,7 @@ $$
 
 ### Profondità di vista
 
-![width:300px](./assets/sight_depth.png)
+![width:800px](./assets/sight_depth_flipped.png)
 
 ---
 
@@ -85,26 +72,25 @@ $$
 
 # Celle Colorate
 
-![width:320px](./assets/colored_example.png)
+![width:320px](./assets/colored_example_less.png)
 
 Le celle colorate introducono riferimenti spaziali univoci
 
 ---
 
-# Generazione del prompt
+<!-- _class: lead -->
 
-- Deterministico
-- Linguaggio naturale (inglese)
-- Preambolo/Step
+### Informazioni nel preambolo
+
+![width:400px](./assets/prompt_example.png)
 
 ---
 
-# Informazioni nel preambolo
+<!-- _class: lead -->
 
-- Descrizione del task
-- Dimensione del labirinto e profondità di vista
-- Consigli strategici
-- Invito a 'riflettere'
+# Generazione del prompt
+
+![width:500px](./assets/prompt_step_example.png)
 
 ---
 
@@ -120,12 +106,12 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 # Parsing dell'output
 
-| Output del modello                                  | Azione estratta |
-| --------------------------------------------------- | --------------- |
-| I want to move **East**!                            | east            |
-| I should move **NORTH**!                            | north           |
-| My next move is: **s**                              | south           |
-| Let's move north, before exploring **west** better. | west            |
+| Output del modello                                  | Azione estratta               |
+| --------------------------------------------------- | ----------------------------- |
+| I want to move **East**!                            | east                          |
+| I should move **NORTH**!                            | north                         |
+| My next move is: **s**                              | south                         |
+| Let's move north, before exploring **west** better. | <span class="red">west</span> |
 
 ---
 
@@ -145,7 +131,7 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 # Esempi di risoluzioni
 
-![width:900px](./assets/maze_exp_example.png)
+![width:900px](./assets/maze_exp_example_plus.png)
 
 ---
 
@@ -154,19 +140,19 @@ Le celle colorate introducono riferimenti spaziali univoci
 | Dimensione | Miglior configurazione osservata | % risolti |
 | ---------- | -------------------------------- | --------: |
 | **3×3**    | deepseek-r1:70b                  |  **100%** |
-| **4×4**    | deepseek-r1:32b                  |   **50%** |
-| **5×5**    | deepseek-r1                      |    **0%** |
+| **4×4**    | deepseek-r1:70b                  |   **50%** |
+| **5×5**    | deepseek-r1:70b                  |   **20%** |
 | **6×6**    | deepseek-r1                      |   **10%** |
 
 ---
 
 # Osservazioni
 
-| Dimensione | Esito                     |
-| ---------- | ------------------------- |
-| 3×3        | task spesso risolvibile   |
-| 4×4        | prestazioni già instabili |
-| 5×5-6x6    | collasso quasi completo   |
+| Dimensione  | Esito                     |
+| ----------- | ------------------------- |
+| **3×3**     | task spesso risolvibile   |
+| **4×4**     | prestazioni già instabili |
+| **5×5-6x6** | collasso quasi completo   |
 
 ---
 
@@ -194,6 +180,7 @@ Benchmark:
 ## Sviluppi futuri
 
 - confronto con modelli proprietari
+- utilizzo di modelli di dimensioni maggiori
 - più set di istanze
 - varianti con strumenti o memoria esterna
 - benchmark più ampi ma sempre verificabili
