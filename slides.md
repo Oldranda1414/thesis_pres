@@ -129,7 +129,7 @@ Le celle colorate introducono riferimenti spaziali univoci
 | ---------- | -------------------------------- | --------: |
 | **3×3**    | deepseek-r1:70b                  |  **100%** |
 | **4×4**    | deepseek-r1:70b                  |   **50%** |
-| **5×5**    | deepseek-r1:70b                  |   **20%** |
+| **5×5**    | deepseek-r1:70b                  |   **30%** |
 | **6×6**    | deepseek-r1                      |   **10%** |
 
 ---
