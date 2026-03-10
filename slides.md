@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia
-paginate: true
+paginate: false
 size: 16:9
 title: Valutazione delle Capacità di Ragionamento dei Large Language Model
 description: Discussione tesi magistrale
@@ -18,6 +18,8 @@ style: |
 ## la risoluzione di labirinti
 
 **Leonardo Randacio**
+
+**Relatore: Matteo Ferrara**
 
 ---
 
@@ -42,7 +44,7 @@ style: |
 
 - algoritmo Depth-First Search
 - partenza e uscita scelti casualmente
-- filtraggio labirinti 'facili':
+- filtraggio labirinti 'facili'
 
 ---
 
@@ -80,27 +82,13 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 <!-- _class: lead -->
 
-### Informazioni nel preambolo
-
-![width:400px](./assets/prompt_example.png)
+![width:780px](./assets/prompt_example_plus.png)
 
 ---
 
 <!-- _class: lead -->
 
-# Generazione del prompt
-
-![width:500px](./assets/prompt_step_example.png)
-
----
-
-# Informazioni nello step prompt
-
-- Ultima mossa eseguita
-- Direzioni laterali
-- Celle colorate
-- Ultime mosse svolte
-- Mosse disponibili
+![width:600px](./assets/prompt_step_example_plus.png)
 
 ---
 
@@ -131,7 +119,7 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 # Esempi di risoluzioni
 
-![width:900px](./assets/maze_exp_example_plus.png)
+![width:1100px](./assets/maze_exp_example_plus.png)
 
 ---
 
