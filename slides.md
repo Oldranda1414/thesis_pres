@@ -145,23 +145,12 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 ---
 
-# Contributo
-
-Benchmark:
-
-- semplice
-- controllato
-- verificabile
-
----
-
 ## Sviluppi futuri
 
 - confronto con modelli proprietari
 - utilizzo di modelli di dimensioni maggiori
-- più set di istanze
-- varianti con strumenti o memoria esterna
-- benchmark più ampi ma sempre verificabili
+- aumentare il numero di labirinti
+- varianti del prompt o memoria esterna
 
 ---
 
