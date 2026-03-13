@@ -76,8 +76,6 @@ style: |
 
 ![width:320px](./assets/colored_example_less.png)
 
-Le celle colorate introducono riferimenti spaziali univoci
-
 ---
 
 <!-- _class: lead -->
