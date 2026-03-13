@@ -136,16 +136,6 @@ Le celle colorate introducono riferimenti spaziali univoci
 
 # Osservazioni
 
-| Dimensione  | Esito                     |
-| ----------- | ------------------------- |
-| **3×3**     | task spesso risolvibile   |
-| **4×4**     | prestazioni già instabili |
-| **5×5-6x6** | collasso quasi completo   |
-
----
-
-# Osservazioni
-
 - Buoni risultati su labirinti 3x3
 - Rilevanza dimensione del modello
 - Limiti:
