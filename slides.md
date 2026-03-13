@@ -97,7 +97,7 @@ Le celle colorate introducono riferimenti spaziali univoci
 | Output del modello                                  | Azione estratta               |
 | --------------------------------------------------- | ----------------------------- |
 | I want to move **East**!                            | east                          |
-| I should move **NORTH**!                            | north                         |
+| I should move **NORTH** next.                       | north                         |
 | My next move is: **s**                              | south                         |
 | Let's move north, before exploring **west** better. | <span class="red">west</span> |
 
